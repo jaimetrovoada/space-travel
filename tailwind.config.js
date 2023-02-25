@@ -12,6 +12,10 @@ module.exports = {
         secondary: "rgb(var(--color-secondary) / 1)",
         tertiary: "rgb(var(--color-tertiary) / 1)",
       },
+      fontFamily: {
+        barlow: "var(--font-barlow)",
+        bellefair: "var(--font-bellefair)",
+      },
     },
   },
   plugins: [],

@@ -3,7 +3,11 @@ import "@/styles/globals.css";
 import { Barlow_Condensed } from "@next/font/google";
 import type { AppProps } from "next/app";
 
-const barlow = Barlow_Condensed({ weight: "400", subsets: ["latin"] });
+const barlow = Barlow_Condensed({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-barlow",
+});
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
