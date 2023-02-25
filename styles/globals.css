@@ -11,18 +11,29 @@
 
 }
 
+html,
+body {
+    height: 100%;
+}
+
 body {
     background-image: url("/assets/home/background-home-mobile.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 @screen md {
     body {
         background-image: url("/assets/home/background-home-tablet.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 }
 
 @screen xl {
     body {
         background-image: url("/assets/home/background-home-desktop.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 }
