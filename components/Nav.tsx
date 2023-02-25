@@ -21,7 +21,7 @@ export default function Nav() {
   };
 
   return (
-    <header className="flex flex-row items-center justify-between p-6 md:p-0 xl:mt-10">
+    <header className="flex flex-initial flex-row items-center justify-between p-6 md:p-0 xl:pt-10">
       <Image
         src="/assets/shared/logo.svg"
         width={48}

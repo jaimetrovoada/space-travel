@@ -20,6 +20,7 @@ body {
     background-image: url("/assets/home/background-home-mobile.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
 }
 
 @screen md {
@@ -27,6 +28,7 @@ body {
         background-image: url("/assets/home/background-home-tablet.jpg");
         background-repeat: no-repeat;
         background-size: cover;
+        background-position: center;
     }
 }
 
@@ -35,9 +37,10 @@ body {
         background-image: url("/assets/home/background-home-desktop.jpg");
         background-repeat: no-repeat;
         background-size: cover;
+        background-position: center;
     }
 }
 
 #__next {
-    @apply h-full
+    @apply h-full flex flex-col
 }
