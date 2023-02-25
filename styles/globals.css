@@ -37,3 +37,7 @@ body {
         background-size: cover;
     }
 }
+
+#__next {
+    @apply h-full
+}
