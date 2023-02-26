@@ -3,7 +3,7 @@ import ExploreBtn from "@/components/ExploreBtn";
 
 export default function Home() {
   return (
-    <div className="flex h-full flex-col xl:mx-40 xl:flex-row xl:items-end">
+    <div className="flex h-full flex-col pt-12 md:pt-24 xl:mx-40 xl:flex-row xl:items-end">
       <div className="flex flex-col items-center text-center xl:mb-32 xl:items-baseline xl:text-left">
         <p className="text-secondary md:text-xl xl:text-3xl ">
           SO, YOU WANT TO TRAVEL TO
