@@ -14,6 +14,7 @@ module.exports = {
       },
       fontFamily: {
         barlow: "var(--font-barlow)",
+        barlowCondensed: "var(--font-barlow-condensed)",
         bellefair: "var(--font-bellefair)",
       },
     },
