@@ -1,9 +1,9 @@
-import React from "react";
+import React, { HTMLAttributes } from "react";
 
 interface Props {
   sub: string;
   title: string;
-  className?: string;
+  className?: HTMLAttributes<HTMLElement>["className"];
 }
 const PageTitle: React.FC<Props> = ({ sub, title, className }) => {
   return (
