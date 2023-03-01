@@ -41,12 +41,24 @@ const Menu = forwardRef<MenuHandle, Props>((props, ref) => {
     return { toggleMenu };
   });
 
+  const routesArr = ["/", "/destination", "/crew", "/technology"];
+
+  const routeNamesMap = new Map<string, string>();
+  routesArr.map((route) => {
+    if (route === "/") {
+      routeNamesMap.set(route, "home");
+    } else {
+      routeNamesMap.set(route, route.replace("/", ""));
+    }
+  });
+
+  const currRoute = routeNamesMap.get(route.toLowerCase());
+
   useEffect(() => {
     const links = linksRef.current;
     links.forEach((element) => {
       if (
-        element?.innerText.replace(/\d{1,2}\n/g, "").toLowerCase() ===
-        route.replace("/", "").toLowerCase()
+        element?.innerText.replace(/\d{1,2}\n/g, "").toLowerCase() === currRoute
       ) {
         element.classList.remove(
           "md:border-b-transparent",
@@ -63,42 +75,19 @@ const Menu = forwardRef<MenuHandle, Props>((props, ref) => {
       ref={menuRef}
     >
       <div className="flex h-full max-h-full w-full flex-col gap-8 pl-8 pt-28 md:mx-auto md:w-auto md:flex-row md:gap-9 md:p-0 xl:gap-16">
-        <Link
-          href="/"
-          className={`flex items-center border-r-4 border-r-transparent text-tertiary md:border-r-0 md:border-b-4 md:border-b-transparent ${
-            route === "/" ? "" : "hover:border-b-white/25"
-          }`}
-          ref={(el) => linksRef.current.push(el as HTMLAnchorElement)}
-        >
-          <strong className="mr-3 md:hidden xl:block">00</strong>HOME
-        </Link>
-        <Link
-          href="/destination"
-          className={`flex items-center border-r-4 border-r-transparent text-tertiary md:border-r-0 md:border-b-4 md:border-b-transparent ${
-            route === "/destination" ? "" : "hover:border-b-white/25"
-          }`}
-          ref={(el) => linksRef.current.push(el as HTMLAnchorElement)}
-        >
-          <strong className="mr-3 md:hidden xl:block">01</strong> DESTINATION
-        </Link>
-        <Link
-          href="/crew"
-          className={`flex items-center border-r-4 border-r-transparent text-tertiary md:border-r-0 md:border-b-4 md:border-b-transparent ${
-            route === "/crew" ? "" : "hover:border-b-white/25"
-          }`}
-          ref={(el) => linksRef.current.push(el as HTMLAnchorElement)}
-        >
-          <strong className="mr-3 md:hidden xl:block">02</strong>CREW
-        </Link>
-        <Link
-          href="/technology"
-          className={`flex items-center border-r-4 border-r-transparent text-tertiary md:border-r-0 md:border-b-4 md:border-b-transparent ${
-            route === "/technology" ? "" : "hover:border-b-white/25"
-          }`}
-          ref={(el) => linksRef.current.push(el as HTMLAnchorElement)}
-        >
-          <strong className="mr-3 md:hidden xl:block">03</strong>TECHNOLOGY
-        </Link>
+        {routesArr.map((_route, i) => (
+          <Link
+            href={_route}
+            className={`flex items-center border-r-4 border-r-transparent text-tertiary md:border-r-0 md:border-b-4 md:border-b-transparent ${
+              _route === route ? "" : "hover:border-b-white/25"
+            }`}
+            ref={(el) => linksRef.current.push(el as HTMLAnchorElement)}
+            key={_route}
+          >
+            <strong className="mr-3 md:hidden xl:block">{"0" + i}</strong>
+            {routeNamesMap.get(_route)?.toUpperCase()}
+          </Link>
+        ))}
       </div>
     </div>
   );
