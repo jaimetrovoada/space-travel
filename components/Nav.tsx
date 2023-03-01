@@ -17,7 +17,7 @@ export default function Nav() {
         alt={"space tourism logo"}
         className="w-10 md:ml-9 xl:ml-14 xl:w-auto"
       />
-      <div className="z-10 ml-16 -mr-4 hidden h-[1px] w-full max-w-md bg-white/25 xl:block" />
+      <div className="z-10 -mr-8 hidden h-[1px] w-full max-w-md bg-white/25 xl:ml-auto xl:block" />
       <button
         className="absolute right-6 z-20 md:hidden"
         onClick={() =>

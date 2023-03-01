@@ -60,7 +60,7 @@ const Menu = forwardRef<MenuHandle, Props>((props, ref) => {
 
   return (
     <div
-      className="absolute top-0 right-0 z-10 flex w-0 overflow-hidden bg-tertiary/5 backdrop-blur-2xl transition-all md:static md:z-0 md:ml-auto md:flex md:h-24 md:w-full md:max-w-md md:flex-row xl:max-w-4xl"
+      className="absolute top-0 right-0 z-10 flex w-0 overflow-hidden bg-tertiary/5 backdrop-blur-2xl transition-all md:static md:z-0 md:ml-auto md:flex md:h-24 md:w-full md:max-w-md md:flex-row xl:ml-0 xl:max-w-4xl"
       ref={menuRef}
     >
       <div className="flex h-full max-h-full w-full flex-col gap-8 pl-8 pt-28 md:mx-auto md:w-auto md:flex-row md:gap-9 md:p-0 xl:gap-16">
