@@ -1,3 +1,4 @@
+import { routeNamesMap, routesArr } from "@/utils";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, {
@@ -5,7 +6,6 @@ import React, {
   useEffect,
   useImperativeHandle,
   useRef,
-  useState,
 } from "react";
 
 export interface MenuHandle {
@@ -39,17 +39,6 @@ const Menu = forwardRef<MenuHandle, Props>((props, ref) => {
 
   useImperativeHandle(ref, () => {
     return { toggleMenu };
-  });
-
-  const routesArr = ["/", "/destination", "/crew", "/technology"];
-
-  const routeNamesMap = new Map<string, string>();
-  routesArr.map((route) => {
-    if (route === "/") {
-      routeNamesMap.set(route, "home");
-    } else {
-      routeNamesMap.set(route, route.replace("/", ""));
-    }
   });
 
   const currRoute = routeNamesMap.get(route.toLowerCase());
