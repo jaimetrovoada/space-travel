@@ -47,7 +47,7 @@ const Technology = () => {
                   className={`aspect-square h-[40px] rounded-full font-bellefair md:h-[60px] xl:h-[80px] xl:text-[32px] ${
                     data.name === tech.name
                       ? "bg-white text-black"
-                      : "border border-white/25 hover:bg-white/50"
+                      : "border border-white/25 hover:border-white"
                   }`}
                   onClick={() => setTech(data)}
                 >
