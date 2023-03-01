@@ -9,7 +9,7 @@ const Description: React.FC<Props> = ({ text, className }) => {
   return (
     <p
       className={
-        "text-center text-[15px] leading-6 text-secondary md:max-w-[458px] md:text-base md:leading-[28px] xl:text-lg xl:leading-8 " +
+        "text-[15px] leading-6 text-secondary md:max-w-[458px] md:text-base md:leading-[28px] xl:text-lg xl:leading-8 " +
         className
       }
     >
