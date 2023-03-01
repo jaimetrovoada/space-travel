@@ -11,7 +11,7 @@ const Layout = ({ children }: Props) => {
     <>
       <Nav />
       <main
-        className={`${bellefair.variable} ${barlowCondensed.variable} flex flex-auto flex-col text-tertiary md:px-10`}
+        className={`${bellefair.variable} ${barlowCondensed.variable} flex flex-auto flex-col text-tertiary`}
       >
         {children}
       </main>
