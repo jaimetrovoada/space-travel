@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import data from "data.json";
-import { Data, Destination } from "@/types";
+import { Destination } from "@/types";
 import Image from "next/image";
+import PageTitle from "@/components/PageTitle";
 
 const Destination = () => {
   const [destination, setDestination] = useState<Destination>(
@@ -26,11 +27,8 @@ const Destination = () => {
           background-image: var(--destination-bg);
         }
       `}</style>
-      <div className="md:pt-10">
-        <h2 className="text-center font-barlowCondensed tracking-wide md:self-start md:text-left md:text-xl xl:ml-40 xl:text-[28px] xl:tracking-[4.72px]">
-          <strong className="mr-4 text-white/25">01</strong>
-          PICK YOUR DESTINATION
-        </h2>
+      <div className="px-6 md:pt-10">
+        <PageTitle sub="01" title="PICK YOUR DESTINATION" />
         <div className="flex flex-col items-center xl:flex-row xl:justify-center xl:gap-40 xl:pt-16">
           <Image
             src={destination.images.webp}
@@ -45,7 +43,7 @@ const Destination = () => {
               {data.destinations.map((dest: Destination, index: number) => (
                 <button
                   key={`${index} - ${dest.name}`}
-                  className={`border-b-4 border-b-transparent pb-2 font-barlowCondensed xl:tracking-[2.7px] ${
+                  className={`border-b-[3px] border-b-transparent pb-2 font-barlowCondensed text-sm tracking-[2.36px] md:pb-3 md:text-base md:tracking-[2.7px] ${
                     dest.name === destination.name
                       ? null
                       : "text-secondary hover:border-b-white/25"
@@ -67,21 +65,21 @@ const Destination = () => {
                 {destination.description}
               </p>
             </div>
-            <div className="z-10 my-8 h-[1px] w-full bg-white/25 md:mt-12 md:mb-7 md:max-w-xl xl:block" />
+            <div className="my-8 h-[1px] w-full bg-white/25 md:mt-12 md:mb-7 md:max-w-xl xl:block" />
             <div className="flex flex-col items-center gap-8 text-center md:flex-row xl:gap-20 xl:text-left">
               <div>
-                <p className="font-barlowCondensed text-sm text-secondary md:mb-3 xl:tracking-[2.36px]">
+                <p className="font-barlowCondensed text-sm tracking-[2.36px] text-secondary md:mb-3 xl:tracking-[2.36px]">
                   AVG. DISTANCE
                 </p>
-                <p className="font-bellefair text-3xl xl:text-[28px]">
+                <p className="font-bellefair text-[28px]">
                   {destination.distance.toUpperCase()}
                 </p>
               </div>
               <div>
-                <p className="font-barlowCondensed text-sm text-secondary md:mb-3 xl:tracking-[2.36px]">
+                <p className="font-barlowCondensed text-sm tracking-[2.36px] text-secondary md:mb-3 xl:tracking-[2.36px]">
                   EST. TRAVEL TIME
                 </p>
-                <p className="font-bellefair text-3xl xl:text-[28px]">
+                <p className="font-bellefair text-[28px]">
                   {destination.travel.toUpperCase()}
                 </p>
               </div>
