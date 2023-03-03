@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div className="flex h-full flex-col px-6 pt-12 md:pt-24 xl:mx-40 xl:flex-row xl:items-end">
       <div className="flex flex-col items-center text-center xl:mb-32 xl:items-baseline xl:text-left">
-        <p className="tracking-[2.7px] text-secondary md:text-xl xl:text-3xl font-barlowCondensed">
+        <p className="font-barlowCondensed tracking-[2.7px] text-secondary md:text-xl xl:text-3xl">
           SO, YOU WANT TO TRAVEL TO
         </p>
         <p
@@ -21,6 +21,7 @@ export default function Home() {
           Well sit back, and relax because we'll give you a truly out of
           this world experience!
         "
+          className="md:max-w-[444px]"
         />
       </div>
       <div className="mx-auto mt-20 w-fit xl:mx-0 xl:mb-32 xl:ml-auto">
